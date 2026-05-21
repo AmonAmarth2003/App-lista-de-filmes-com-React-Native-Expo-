@@ -1,14 +1,50 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home"    component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+function HomeScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>Home Screen</Text>
+      <Button title="Ir para detalhes" onPress={() => navigation.navigate("Details")}></Button>
     </View>
   );
 }
+
+
+function DetailsScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>Details Screen</Text>
+      <Button title="Voltar para home" onPress={() => navigation.goBack()}></Button>
+    </View>
+  );
+}
+
+
+
+function ProdutoScreen({ navigation }) { 
+  return (
+    <View style={{ flex: 1, alignItems: 'center' , justifyContent: 'center' }}>
+      <Text>Estamos visualizando um Produto</Text>
+      <Button title="Voltar" onPress={() => navigation.goBack()} />
+    </View>
+  );
+}
+
 
 const styles = StyleSheet.create({
   container: {

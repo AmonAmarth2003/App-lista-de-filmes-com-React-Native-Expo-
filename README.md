@@ -1,12 +1,20 @@
-# App-lista-de-filmes-com-React-Native-Expo-
+# App Lista de Filmes com React Native Expo
 
 ## Objetivo principal:  
 
 Compreender o uso do React Navigation e REST API em React Native / Expo  
 
-### Dependências
+### Dependências Utilizadas
 
-Este projeto usa Expo e React Native Paper. As dependências já estão configuradas — basta rodar `npm install`.
+Este projeto utiliza as seguintes bibliotecas:
+
+- @react-navigation/native
+- @react-navigation/native-stack
+- react-native-screens
+- react-native-safe-area-context
+- react-native-paper
+
+As dependências já estão configuradas — basta rodar `npm install`.
 
 ## Instalação
 
